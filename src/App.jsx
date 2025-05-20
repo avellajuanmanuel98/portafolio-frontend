@@ -12,6 +12,7 @@ import AdminPanel from "./components/AdminPanel";
 import WebProjects from "./components/WebProjects";
 import Profile from "./components/Profile";
 import ContactForm from "./components/ContactForm";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 function App() {
   // 👉 Activa modo oscuro
@@ -44,6 +45,7 @@ function App() {
         <WebProjects />
         <GroupedGallery />
         <ContactForm />
+        <WhatsAppButton />
       </>
     );
   }
@@ -54,6 +56,7 @@ function App() {
         <h1>Panel de Administración 🛠️</h1>
         <UploadForm />
         <AdminPanel />
+        
       </div>
     );
   }
