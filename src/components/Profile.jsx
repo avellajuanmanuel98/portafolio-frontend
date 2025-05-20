@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import "./Profile.css";
 import { API_BASE_URL } from "../config";
 
@@ -16,17 +17,47 @@ function Profile() {
   return (
     <section className="profile-section">
       <div className="section-container">
-        <div className="profile-card">
+        <motion.div
+          className="profile-card"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           {profile.avatar && (
-            <img
+            <motion.img
               src={`${API_BASE_URL}/uploads/${profile.avatar}`}
               alt="Avatar"
               className="profile-avatar"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             />
           )}
-          <h2 className="profile-name">{profile.name}</h2>
-          <p className="profile-bio">{profile.bio}</p>
-          <div className="profile-links">
+
+          <motion.h2
+            className="profile-name"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            {profile.name}
+          </motion.h2>
+
+          <motion.p
+            className="profile-bio"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            {profile.bio}
+          </motion.p>
+
+          <motion.div
+            className="profile-links"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             {profile.links?.instagram && (
               <a
                 href={profile.links.instagram}
@@ -50,8 +81,8 @@ function Profile() {
                 WhatsApp
               </a>
             )}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
