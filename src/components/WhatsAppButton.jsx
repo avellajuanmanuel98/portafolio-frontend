@@ -3,7 +3,7 @@ import "./WhatsAppButton.css";
 import { FaWhatsapp } from "react-icons/fa";
 
 function WhatsAppButton() {
-  const phone = "573022052551"; // Cambia por tu número
+  const phone = "573186594871"; // Cambia por tu número
   const message = "¡Hola! Quiero más información sobre tus servicios.";
 
   return (
